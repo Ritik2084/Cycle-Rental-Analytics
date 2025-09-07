@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIT Cycles - Booking & Contact</title>
+    <!-- Link to the central stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Flatpickr CSS for the date picker -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <!-- Consistent Header across all pages -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">BIT Cycles Rental</a>
+            <!-- Menu Icon for Mobile -->
+            <div class="menu-icon" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cycles.html">Our Cycles</a></li>
+                <li><a href="booking.html" class="active">Booking</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-section">
+            <h2 class="page-title">Booking & Contact</h2>
+            <div class="booking-page-container">
+                <!-- Booking Form Section -->
+                <div class="booking-form-section">
+                    <h3>Book Your Cycle</h3>
+                    <form id="rentalForm">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="roll">Roll Number:</label>
+                        <input type="text" id="roll" name="roll" required>
+
+                        <label for="hostel">Hostel & Room No:</label>
+                        <input type="text" id="hostel" name="hostel" required>
+                        
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" required>
+
+                        <label for="dateRange">Select Dates:</label>
+                        <input type="text" id="dateRange" name="dateRange" placeholder="Select start and end date" required>
+
+                        <button type="button" class="cta-button" onclick="bookOnWhatsApp()">Book on WhatsApp</button>
+                    </form>
+                </div>
+
+                <!-- Contact Details Section -->
+                <div class="contact-details-section">
+                    <h3>Contact Information</h3>
+                    <p>Have questions? Feel free to reach out to us directly. We're here to help!</p>
+                    <div class="contact-info">
+                        <p><i class="fab fa-whatsapp"></i> <strong>WhatsApp:</strong> <a href="https://wa.me/918210436325">+91 8210436325</a></p>
+                        <p><i class="fab fa-whatsapp"></i> <strong>Additional:</strong> <a href="https://wa.me/919142230879">+91 9142230879</a></p>
+                        <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:oneplusharry@gmail.com">oneplusharry@gmail.com</a></p>
+                        <p><i class="fas fa-map-marker-alt"></i> <strong>Pickup Point:</strong> Hostel 4, Room 8, BIT Mesra</p>
+                        <p><i class="fas fa-clock"></i> <strong>Hours:</strong> 24/7, All Days</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for notifications -->
+    <div id="notificationModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <p id="modalMessage"></p>
+        </div>
+    </div>
+
+    <!-- Consistent Footer across all pages -->
+    <footer>
+        <p>&copy; 2025 BIT Cycles Rental. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Flatpickr JS for date picker -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script>
+        // --- Mobile Menu Toggle ---
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // --- Notification Modal ---
+        const modal = document.getElementById('notificationModal');
+        const modalMessage = document.getElementById('modalMessage');
+        function showModal(message) {
+            modalMessage.textContent = message;
+            modal.style.display = 'flex';
+        }
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // --- Booking Form Logic ---
+        const datePicker = flatpickr("#dateRange", {
+            mode: "range",
+            dateFormat: "d-m-Y",
+            minDate: "today",
+        });
+
+        function bookOnWhatsApp() {
+            const name = document.getElementById('name').value;
+            const roll = document.getElementById('roll').value;
+            const hostel = document.getElementById('hostel').value;
+            const phone = document.getElementById('phone').value;
+            const selectedDates = datePicker.selectedDates;
+
+            // Validation checks
+            if (!name || !roll || !hostel || !phone) {
+                showModal('Please fill in all your personal details.');
+                return;
+            }
+            if (selectedDates.length < 2) {
+                showModal('Please select a valid start and end date.');
+                return;
+            }
+
+            const startDate = selectedDates[0];
+            const endDate = selectedDates[1];
+            const options = { day: '2-digit', month: 'short', year: 'numeric' };
+            const formattedStartDate = startDate.toLocaleDateString('en-GB', options);
+            const formattedEndDate = endDate.toLocaleDateString('en-GB', options);
+            
+            // Calculate number of days
+            const timeDiff = endDate.getTime() - startDate.getTime();
+            const dayDiff = Math.ceil(timeDiff / (1000 * 3600 * 24)) + 1;
+
+            // !! IMPORTANT: REPLACE WITH YOUR WHATSAPP NUMBER !!
+            const whatsappNumber = '918210436325'; 
+            const message = `*Cycle Booking Request*\n\nName: ${name}\nRoll Number: ${roll}\nHostel & Room No: ${hostel}\nPhone Number: ${phone}\n\n*Booking Dates*\nStart Date: ${formattedStartDate}\nEnd Date: ${formattedEndDate}\nTotal Days: ${dayDiff}`;
+
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>

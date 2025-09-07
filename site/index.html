@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIT Cycles Rental - Home</title>
+    <!-- Link to the central stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <!-- Consistent Header across all pages -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">BIT Cycles Rental</a>
+            <!-- Menu Icon for Mobile -->
+            <div class="menu-icon" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="cycles.html">Our Cycles</a></li>
+                <li><a href="booking.html">Booking</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Rent a Cycle, Explore the Campus</h1>
+                <h2>By the Students, For the Students</h2>
+                <p>The most affordable and convenient way to get around BIT Mesra.</p>
+                <a href="booking.html" class="cta-button">Book Now</a>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-it-works">
+            <h2>How It Works</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-icon"><i class="fas fa-bicycle"></i></div>
+                    <h3>1. Choose Your Cycle</h3>
+                    <p>Browse our collection and pick the perfect ride for you.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon"><i class="fas fa-file-alt"></i></div>
+                    <h3>2. Fill the Form</h3>
+                    <p>Provide your details in our simple booking form.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon"><i class="fab fa-whatsapp"></i></div>
+                    <h3>3. Book on WhatsApp</h3>
+                    <p>Get redirected to WhatsApp to confirm your booking.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Consistent Footer across all pages -->
+    <footer>
+        <p>&copy; 2025 BIT Cycles Rental. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript to toggle the mobile menu -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

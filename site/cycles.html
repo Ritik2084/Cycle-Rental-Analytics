@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIT Cycles - Our Cycles</title>
+    <!-- Link to the central stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <!-- Consistent Header across all pages -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">BIT Cycles Rental</a>
+            <!-- Menu Icon for Mobile -->
+            <div class="menu-icon" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cycles.html" class="active">Our Cycles</a></li>
+                <li><a href="booking.html">Booking</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Cycle Gallery Section -->
+        <section class="page-section">
+            <h2 class="page-title">Our Cycles</h2>
+            <div class="cycle-grid">
+                <!-- Cycle Card 1 -->
+                <div class="cycle-card">
+                    <img src="A.jpg" alt="Volcano Cycle" onerror="this.onerror=null;this.src='https://placehold.co/600x400/CCCCCC/ffffff?text=Image+Not+Found';">
+                    <div class="cycle-card-content">
+                        <h3>Volcano Cycle</h3>
+                        <p>Perfect for exploring the rough terrains around campus. Comes with inbuilt shock absorber.</p>
+                        <p class="price">₹50 / day</p>
+                        <a href="booking.html" class="cta-button">Book Now</a>
+                    </div>
+                </div>
+                <!-- Cycle Card 2 -->
+                <div class="cycle-card">
+                    <img src="B.jpg" alt="Urban Terrain Geared Cycle" onerror="this.onerror=null;this.src='https://placehold.co/600x400/CCCCCC/ffffff?text=Image+Not+Found';">
+                    <div class="cycle-card-content">
+                        <h3>Urban Terrain Geared</h3>
+                        <p>A smooth and efficient ride for campus roads. Comes with 21 speed combinations.</p>
+                        <p class="price">₹70 / day</p>
+                        <a href="booking.html" class="cta-button">Book Now</a>
+                    </div>
+                </div>
+                <!-- Cycle Card 3 -->
+                <div class="cycle-card">
+                    <img src="C.jpg" alt="Hero Classic" onerror="this.onerror=null;this.src='https://placehold.co/600x400/CCCCCC/ffffff?text=Image+Not+Found';">
+                     <div class="cycle-card-content">
+                        <h3>Hero Classic</h3>
+                        <p>A stylish and comfortable ride for your daily commute and errands.</p>
+                        <p class="price">₹50 / day</p>
+                        <a href="booking.html" class="cta-button">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Consistent Footer across all pages -->
+    <footer>
+        <p>&copy; 2025 BIT Cycles Rental. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript to toggle the mobile menu -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

@@ -6,3 +6,4 @@ Data reflects realistic bookings, credits, repeat customers, cancellations, and 
 
 A website was also built to let students browse cycles, check prices, and make bookings easily. 
 Check out my website [here](https://bitcyclerentals.netlify.app/)
+

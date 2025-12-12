@@ -1,5 +1,8 @@
 # Cycle-Rental-Business
-  [website](https://bitcyclerentals.netlify.app/)
+
+[website](https://bitcyclerentals.netlify.app/)
+
+[Marketing Poster](https://github.com/Ritik2084/Cycle-Rental-Analytics/blob/main/Rent%20Rides.jpg)
   
   [Rental Data&output](https://docs.google.com/spreadsheets/d/1b5njVjLh2m9u20CmJujBHW-93dcboIZKoEoGCc2uVKU/edit?gid=0#gid=0&fvid=1939669188)
 

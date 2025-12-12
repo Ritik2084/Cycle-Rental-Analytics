@@ -3,6 +3,8 @@
   
   [Rental Data](https://docs.google.com/spreadsheets/d/1b5njVjLh2m9u20CmJujBHW-93dcboIZKoEoGCc2uVKU/edit?gid=0#gid=0&fvid=1939669188)
 
+ Analyzed real business data in real time to identify operational bottlenecks and drive measurable improvements.
+
 
 # Real life project overview
 Cycle Rental Business at BIT Mesra for Hostel students. Dataset includes realistic bookings, credits, repeat customers &amp; seasonal spikes (Jun–Jul 2025, ~₹10k revenue). A website was also built to browse cycles, view prices &amp; book rentals via QR, WhatsApp, or walk-in."
